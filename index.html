@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="theme-color" content="#0b0f1a">
+<title>Gym Tracker</title>
+<link rel="icon" href="data:,">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<header class="top">
+  <div class="brand"><span class="logo">🏋️</span><h1 id="appTitle"></h1></div>
+  <div class="tools">
+    <button class="pill" id="helpBtn">?</button>
+    <button class="pill" id="langBtn">FI</button>
+    <button class="pill" id="fsBtn" title="Text size">Aa</button>
+  </div>
+</header>
+
+<section class="card hero">
+  <div class="heroTop">
+    <div>
+      <div class="kicker" data-i18n="streakLabel"></div>
+      <div class="streak"><span id="flame" class="flame">🔥</span><span id="streakNum">0</span></div>
+    </div>
+    <div class="ring">
+      <svg viewBox="0 0 36 36">
+        <circle class="rbg" cx="18" cy="18" r="15.9"></circle>
+        <circle id="ringFg" class="rfg" cx="18" cy="18" r="15.9" pathLength="100"></circle>
+      </svg>
+      <div class="ringTxt" id="ringTxt">0/3</div>
+    </div>
+  </div>
+  <div class="week" id="week"></div>
+  <div class="hello" id="hello"></div>
+  <div class="quote" id="quote"></div>
+  <div class="goalrow">
+    <span id="goalText" class="muted"></span>
+    <span><button class="step" id="goalMinus">−</button><button class="step" id="goalPlus">+</button></span>
+  </div>
+</section>
+
+<div class="stats">
+  <div class="stat"><b id="totalDays">0</b><span data-i18n="workoutDays"></span></div>
+  <div class="stat"><b id="volWeek">0</b><span data-i18n="volume"></span></div>
+  <div class="stat"><b id="prCount">0</b><span data-i18n="prs"></span></div>
+</div>
+
+<h2 data-i18n="exercise"></h2>
+<div class="chips" id="chips"></div>
+<div class="tiles" id="tiles"></div>
+<div class="addRow">
+  <input id="newEx" data-ph="addOwnPh">
+  <button id="addEx" data-i18n="add"></button>
+</div>
+
+<h2 data-i18n="lastTime"></h2>
+<section class="card" id="last"></section>
+
+<h2 data-i18n="logSet"></h2>
+<section class="card">
+  <div class="stepRow">
+    <button class="sbtn" data-t="weight" data-d="-2.5">−</button>
+    <input id="weight" type="number" inputmode="decimal" step="0.5" data-ph="weightPh">
+    <button class="sbtn" data-t="weight" data-d="2.5">+</button>
+  </div>
+  <div class="stepRow">
+    <button class="sbtn" data-t="reps" data-d="-1">−</button>
+    <input id="reps" type="number" inputmode="numeric" data-ph="repsPh">
+    <button class="sbtn" data-t="reps" data-d="1">+</button>
+  </div>
+  <button id="addSet" class="cta" data-i18n="addSet"></button>
+  <div class="msg" id="msg"></div>
+</section>
+
+<h2 data-i18n="restTitle"></h2>
+<section class="card">
+  <div class="restRow">
+    <div id="restTxt" class="restTime">0:00</div>
+    <div class="restBtns">
+      <button data-rest="60">60 s</button>
+      <button data-rest="90">90 s</button>
+      <button data-rest="120">2 min</button>
+      <button id="restStop" data-i18n="restStop"></button>
+    </div>
+  </div>
+</section>
+
+<h2 data-i18n="today"></h2>
+<section class="card" id="todaySets"></section>
+
+<h2 data-i18n="history"></h2>
+<div id="history" class="hist"></div>
+
+<h2 data-i18n="backup"></h2>
+<section class="card">
+  <div class="muted" data-i18n="backupNote"></div>
+  <div class="row2">
+    <button class="ghost" id="exportBtn" data-i18n="export"></button>
+    <button class="ghost" id="importBtn" data-i18n="import"></button>
+  </div>
+  <input type="file" id="importFile" accept=".json" hidden>
+</section>
+
+<div id="guide">
+  <div class="box">
+    <h2 style="margin-top:0" data-i18n="guideTitle"></h2>
+    <ol>
+      <li data-i18n="guide1"></li>
+      <li data-i18n="guide2"></li>
+      <li data-i18n="guide3"></li>
+      <li data-i18n="guide4"></li>
+    </ol>
+    <button class="cta" id="guideOk" data-i18n="guideBtn"></button>
+  </div>
+</div>
+
+<script src="data.js"></script>
+<script src="app.js"></script>
+</body>
+</html>
